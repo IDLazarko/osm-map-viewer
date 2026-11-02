@@ -80,3 +80,11 @@ dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=
    После успешной автономной сборки исполняемый файл `.exe` будет ждать вас в целевой папке публикации:
    `bin/Release/net10.0/win-x64/publish/`
 
+5. ** В случае ошибки и для перекомпиляции выполните следующие шаги по очереди: **
+
+   Шаг 1. Полностью очистим старые файлы
+
+   ``` bash
+   Remove-Item * -Recurse -Force -ErrorAction SilentlyContinue
+   dotnet new console --force
+   ```
